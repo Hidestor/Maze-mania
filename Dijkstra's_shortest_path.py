@@ -1,10 +1,11 @@
+# FibonacciHeap and priority_queue are the modules defined separately
 from FibonacciHeap import FibHeap
 from priority_queue import FibPQ, HeapPQ, QueuePQ
 
 def solve(maze):
-    # Width is used for indexing, total is used for array sizes
+    # Width is used for indexing
     width = maze.width
-    total = maze.width * maze.height
+    total = maze.width * maze.height # total is used for array sizes
 
     # Start node, end node
     start = maze.start
