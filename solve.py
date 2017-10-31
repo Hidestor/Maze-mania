@@ -1,9 +1,20 @@
+#Python Imaging Library (PIL):
+#The Python Imaging Library (PIL) adds image processing capabilities to your Python interpreter.
+#This library supports many file formats, and provides powerful image processing and graphics capabilities.
+
 from PIL import Image
+#The Image module provides a class with the same name which is used to represent a PIL image. 
+#The module also provides a number of factory functions, 
+#including functions to load images from files, and to create new images.
+
 import time
 from mazes import Maze
 from factory import SolverFactory
 
-# Read command line arguments - the python argparse class is convenient here.
+#Read command line arguments - the python argparse class is convenient here.
+#The argparse module makes it easy to write user-friendly command-line interfaces.
+#The program defines what arguments it requires, and argparse will figure out how to parse those out of sys.argv. 
+#The argparse module also automatically generates help and usage messages and issues errors when users give the program invalid args.
 import argparse
 
 def solve(factory, method, input_file, output_file):
@@ -13,9 +24,9 @@ def solve(factory, method, input_file, output_file):
 
     # Create the maze (and time it) - for many mazes this is more time consuming than solving the maze
     print ("Creating Maze")
-    t0 = time.time()
+    t0 = time.time() # time starts
     maze = Maze(im)
-    t1 = time.time()
+    t1 = time.time() # time ends
     print ("Node Count:", maze.count)
     total = t1-t0
     print ("Time elapsed:", total, "\n")
