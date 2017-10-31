@@ -86,11 +86,23 @@ def solve(factory, method, input_file, output_file):
 
 def main():
     sf = SolverFactory()
+    
+    #The first step in using the argparse is creating an ArgumentParser object:
     parser = argparse.ArgumentParser()
+    
+    #Filling an ArgumentParser with information about program arguments is done by making calls to the add_argument() method.
+    #Generally, these calls tell the ArgumentParser how to take the strings on the command line and turn them into objects. 
+    #This information is stored and used when parse_args() is called
+    
     parser.add_argument("-m", "--method", nargs='?', const=sf.Default, default=sf.Default,
                         choices=sf.Choices)
     parser.add_argument("input_file")
     parser.add_argument("output_file")
+    
+    #ArgumentParser parses arguments through the parse_args() method.
+    #This will inspect the command line, convert each argument to the appropriate type and then invoke the appropriate action. 
+    #In most cases, this means a simple Namespace object will be built up from attributes parsed out of the command line:
+    
     args = parser.parse_args()
 
     solve(sf, args.method, args.input_file, args.output_file)
