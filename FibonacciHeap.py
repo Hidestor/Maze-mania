@@ -1,3 +1,6 @@
+# Fibonacci Heap maintains a pointer to minimum value (which is root of a tree). 
+# All tree roots are connected using circular doubly linked list, so all of them can be accessed using single ‘min’ pointer.
+
 class FibHeap:
 
     #### Node Class ####
@@ -9,6 +12,7 @@ class FibHeap:
             self.degree = 0
             self.mark = False
             self.parent = self.child = None
+            # its a doubly circular linked list therefore prev and next.
             self.previous = self.next = self
 
         def issingle(self):
@@ -17,7 +21,8 @@ class FibHeap:
         def insert(self, node):
             if node == None:
                 return
-
+            
+            # insertion in circular doubly linked list
             self.next.previous = node.previous
             node.previous.next = self.next
             self.next = node
@@ -25,8 +30,10 @@ class FibHeap:
 
 
         def remove(self):
+            # deletion in cirular double linked list
             self.previous.next = self.next
             self.next.previous = self.previous
+            # isolating the node to be deleted
             self.next = self.previous = self
 
         def addchild(self, node):
@@ -61,6 +68,7 @@ class FibHeap:
         self.count = 0
         self.maxdegree = 0
 
+    # checks heap is empty or not
     def isempty(self):
         return self.count == 0
 
@@ -77,12 +85,13 @@ class FibHeap:
             if node.key < self.minnode.key:
                 self.minnode = node
         # return node
-
+    
     def minimum(self):
         if self.minnode == None:
             raise AssertionError("Cannot return minimum of empty heap")
         return self.minnode
-
+    
+    # for merging two heaps only we need to change only the minimum node pointer
     def merge(self, heap):
         self.minnode.insert(heap.minnode)
         if self.minnode == None or (heap.minnode != None and heap.minnode.key < self.minnode.key):
