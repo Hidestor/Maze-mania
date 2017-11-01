@@ -9,9 +9,7 @@ Maze solving, given in the form of black and white images using variety of algor
     3) Depth first search algorithm
     
     4) Breadth first search algorithm
-    
-    5) Left turn algorithm
-    
+        
 * Used python module PIL(python imaging library) to extract the information from the B & W image pixelwise.
 
 * Used fuction getdata() of PIL module to get the pixel information.
