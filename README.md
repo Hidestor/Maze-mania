@@ -2,15 +2,15 @@
 
 Maze solving, given in the form of black and white images using variety of algorithms such as:
                                         
-    i) A star algorithm
+    1) A star algorithm
     
-    ii) Dijkstra's algorithm
+    2) Dijkstra's algorithm
     
-    iii) Depth first search algorithm
+    3) Depth first search algorithm
     
-    iv) Breadth first search algorithm
+    4) Breadth first search algorithm
     
-    v) Left turn algorithm
+    5) Left turn algorithm
     
 * Used python module PIL(python imaging library) to extract the information from the B & W image pixelwise.
 
