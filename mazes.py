@@ -9,6 +9,9 @@ class Maze:
 
         width = im.size[0]
         height = im.size[1]
+       
+        #Returns the contents of an image as a sequence object containing pixel values.
+        #The sequence object is flattened, so that values for line one follow directly after the values of line zero, and so on.
         data = list(im.getdata(0))
 
         self.start = None
